@@ -11,21 +11,22 @@ services:
         networks:
             - default
 
-    postgres:
-        image: postgres
-        container_name: postgres
+    node_db:
+        image: mariadb/server:latest
+        container_name: node_db
         restart: unless-stopped
         tty: true
         ports:
-            - "5432:5432"
+            - "3306:3306"
         environment:
-            POSTGRES_USER: postgres
-            POSTGRES_PASSWORD: docker
-            POSTGRES_DB: apivendas
+            MYSQL_DATABASE: apivendas
+            MYSQL_USER: root
+            MYSQL_PASSWORD: secret
+            MYSQL_ROOT_PASSWORD: secret
         networks:
             - default
         volumes:
-            - ./docker/postgres:/var/lib/postgresql
+            - ./docker/mysql:/var/lib/mysql
 
 networks:
     default:
