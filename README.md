@@ -7,6 +7,8 @@ e depois
 
 `docker-compose up`
 
+### Para rodar as migrations execute
+`docker-compose run node_app npm run typeorm migration:run`
 ### Para testar se a api está acessível entre no endereço:
 
 [http://localhost:3333](http://localhost:3333)
