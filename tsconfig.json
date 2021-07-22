@@ -48,10 +48,10 @@
     "baseUrl": "./",                             /* Base directory to resolve non-absolute module names. */
     "paths": {
       "@controllers/*": ["src/app/controllers/*"],
-      "@models/*": ["src/app/entities/*"],
+      "@entities/*": ["src/app/entities/*"],
       "@shared/*": ["src/app/shared/*"],
-      "@database/*":["src/app/database/*"],
-      "@routes/*": ["src/app/routes/*"]
+      "@database/*":["src/database/*"],
+      "@routes/*": ["src/routes/*"]
     },                                 /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
     // "rootDirs": [],                              /* List of root folders whose combined content represents the structure of the project at runtime. */
     // "typeRoots": [],                             /* List of folders to include type definitions from. */
