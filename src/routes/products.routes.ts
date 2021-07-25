@@ -25,9 +25,6 @@ productsRouter.post(
       price: Joi.number().precision(2).required(),
       quantity: Joi.number().required(),
     },
-    [Segments.PARAMS]: {
-      id: Joi.number().required(),
-    },
   }),
   productsController.create,
 );
@@ -35,6 +32,9 @@ productsRouter.post(
 productsRouter.put(
   '/:id',
   celebrate({
+    [Segments.PARAMS]: {
+      id: Joi.number().required(),
+    },
     [Segments.PARAMS]: {
       id: Joi.number().required(),
     },
