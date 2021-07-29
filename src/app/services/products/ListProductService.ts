@@ -1,4 +1,4 @@
-import Product from '@models/Product';
+import Product from '@entities/Product';
 import { ProductRepository } from 'src/app/repositories/ProductsRepository';
 import { getCustomRepository } from 'typeorm';
 
