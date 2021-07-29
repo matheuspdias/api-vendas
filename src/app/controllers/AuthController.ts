@@ -1,13 +1,13 @@
 import { Request, Response } from 'express';
-import CreateSessionsService from '../services/users/CreateSessionsService';
+import AuthService from '../services/users/AuthService';
 
-export default class SessionsController {
+export default class AuthController {
   public async create(request: Request, response: Response): Promise<Response> {
     const { email, password } = request.body;
 
-    const createSession = new CreateSessionsService();
+    const authService = new AuthService();
 
-    const user = await createSession.execute({
+    const user = await authService.execute({
       email,
       password,
     });

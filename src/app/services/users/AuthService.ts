@@ -16,7 +16,7 @@ interface IResponse {
   token: string;
 }
 
-class CreateSessionsService {
+class AuthService {
   public async execute({ email, password }: IRequest): Promise<IResponse> {
     const usersRepository = getCustomRepository(UsersRepository);
     const user = await usersRepository.findByEmail(email);
@@ -39,4 +39,4 @@ class CreateSessionsService {
   }
 }
 
-export default CreateSessionsService;
+export default AuthService;
