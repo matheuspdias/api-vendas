@@ -5,6 +5,7 @@ import cors from 'cors';
 import { errors } from 'celebrate';
 import routes from 'src/routes/index';
 import AppError from 'src/shared/errors/AppError';
+import uploadConfig from '@config/upload';
 import 'src/database/index';
 
 const app = express();
@@ -12,7 +13,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use('/files', express.static(uploadConfig.directory));
 app.use(routes);
 app.use(errors());
 
